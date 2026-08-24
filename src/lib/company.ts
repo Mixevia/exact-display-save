@@ -1,0 +1,45 @@
+export const company = {
+  name: "Bode Partners Ug Limited",
+  registration: "80034749519830",
+  tin: "1054506880",
+  incorporated: "04 Aug 2025, Kampala",
+  legalForm: "Private Ltd by Shares",
+  hq: "Kyaliwajala Road, Kampala",
+  facility: "Rwentondo Lane 1, Mbarara City South Division",
+  poBox: "P.O. Box 422717, Kampala",
+  phones: ["+256 706 22 62 24", "+256 701 66 38 24"],
+  email: "bodepartnersug@gmail.com",
+  partners: "RIELA, Perry Engineering",
+  flagship: "Bode Tomato Sauce, 400g",
+} as const;
+
+export const team = [
+  { name: "Asiimwe Brian", role: "Mechanical Engineer", cred: "BSc. Mechanical & Manufacturing Engineering" },
+  { name: "Agaba Francis", role: "Electrical Engineer", cred: "BSc. Electrical Engineering" },
+  { name: "Turiho-ahabwe Aidede", role: "Accountant", cred: "BSc. Accounting & Finance, CPA" },
+  { name: "Arinda Micheal Alvin", role: "Civil Engineer", cred: "BSc. Civil Engineering" },
+  { name: "Atamba Michelle", role: "Communication & Operations Manager", cred: "BSc. Graphic Design" },
+  { name: "Okello Charles", role: "Chief Senior Technician", cred: "Diploma Mechanical Engineering" },
+  { name: "Atamba Neville", role: "Manager, Bode Tomato Sauce", cred: "BSc. Interior & Landscape Design" },
+  { name: "Kamukama Benson", role: "Architect", cred: "BSc. Architecture" },
+] as const;
+
+export const clients = [
+  "Ministry of Water & Environment",
+  "Uganda Prisons Service",
+  "UWRSA",
+  "RIELA Uganda",
+  "NCBA Bank",
+  "NAGRC&DB",
+  "JESA Dairy Fresh",
+  "International University of East Africa",
+  "Uganda National Farmers Federation",
+  "Ministry of Local Government",
+  "Equity Bank",
+  "Centenary Bank",
+  "Uganda Police Force",
+  "The Grain Council of Uganda",
+  "Coronation Developers Ltd",
+  "Vision Group",
+  "MAAIF",
+] as const;

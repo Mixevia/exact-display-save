@@ -87,7 +87,7 @@ function Index() {
             alt="Grain intake elevators and silo battery at a Bode Partners installation"
             width={1600}
             height={1008}
-            className="absolute inset-0 h-full w-full object-cover duotone"
+            className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-ink/70 mix-blend-multiply" />
           <div className="absolute inset-0 bg-rust/35 mix-blend-color" />

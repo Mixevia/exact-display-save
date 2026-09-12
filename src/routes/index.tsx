@@ -83,8 +83,8 @@ function Index() {
         {/* HERO */}
         <section className="relative flex min-h-[92vh] items-end overflow-hidden pt-[68px]">
           <img
-            src={siloComplex}
-            alt="Grain silo battery at a Bode Partners agro-processing installation"
+            src={intakeElevatorsAsset.url}
+            alt="Grain intake elevators and silo battery at a Bode Partners installation"
             width={1600}
             height={1008}
             className="absolute inset-0 h-full w-full object-cover duotone"
@@ -171,8 +171,8 @@ function Index() {
                 {[
                   ["Incorporated", company.incorporated],
                   ["Legal form", company.legalForm],
-                  ["Headquarters", company.hq],
-                  ["Production facility", company.facility],
+                  ["Engineering services", company.hq],
+                  ["Sauce production & distribution", company.facility],
                   ["Equipment partners", company.partners],
                   ["Flagship product", company.flagship],
                   ["Phone", company.phones[0]],
@@ -210,7 +210,7 @@ function Index() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={s.img}
-                      alt={s.t}
+                      alt={s.alt}
                       loading="lazy"
                       width={900}
                       height={675}
@@ -252,6 +252,7 @@ function Index() {
                   "Continuous-flow and mobile drying systems",
                   "Conveying, elevation and intake handling",
                   "Civil works, foundations and structural steel",
+                  "Turnkey solutions with Imas Turkey, Ozstar Makina, Alvan Blanch, Cimbria, Enoch Dryers and Buhler",
                   "Commissioning, operator training and service",
                 ].map((li) => (
                   <li
@@ -263,11 +264,16 @@ function Index() {
                 ))}
               </ul>
               <div className="mt-9 grid grid-cols-2 gap-2">
-                {[silo1, dryer1, dryer2, siteTeam].map((img, i) => (
+                {[
+                  { src: siloBatteryAsset.url, alt: "Erected grain storage silos on concrete ring beams" },
+                  { src: dryerSiloAsset.url, alt: "Grain dryer and storage silo installation" },
+                  { src: dryerIntakeAsset.url, alt: "Intake hopper feeding a grain drying tower" },
+                  { src: controlPanelAsset.url, alt: "Electrical control panel wired for a grain handling plant" },
+                ].map((im, i) => (
                   <img
                     key={i}
-                    src={img}
-                    alt="Agro-processing installation work"
+                    src={im.src}
+                    alt={im.alt}
                     loading="lazy"
                     width={900}
                     height={900}

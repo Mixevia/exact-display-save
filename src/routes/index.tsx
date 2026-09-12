@@ -4,12 +4,16 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Reveal, Eyebrow } from "@/components/Reveal";
 import { company, team, clients } from "@/lib/company";
 
-import siloComplex from "@/assets/silo-complex.jpg";
-import silo1 from "@/assets/silo-1.jpg";
-import dryer1 from "@/assets/dryer-1.jpg";
-import dryer2 from "@/assets/dryer-2.jpg";
-import foundation from "@/assets/foundation.jpg";
-import siteTeam from "@/assets/site-team.jpg";
+import siloBatteryAsset from "@/assets/real-silo-battery.jpg.asset.json";
+import dryerSiloAsset from "@/assets/real-dryer-silo.jpg.asset.json";
+import dryerTowerAsset from "@/assets/real-dryer-tower.jpg.asset.json";
+import dryerIntakeAsset from "@/assets/real-dryer-intake.jpg.asset.json";
+import intakeElevatorsAsset from "@/assets/real-intake-elevators.jpg.asset.json";
+import civilSlabAsset from "@/assets/real-civil-slab.jpg.asset.json";
+import steelShedAsset from "@/assets/real-steel-shed.jpg.asset.json";
+import controlPanelAsset from "@/assets/real-control-panel.jpg.asset.json";
+import controlCabinetAsset from "@/assets/real-control-cabinet.jpg.asset.json";
+import generatorAsset from "@/assets/real-generator.jpg.asset.json";
 import sauceRange from "@/assets/sauce-range.jpg";
 import sauceStock from "@/assets/sauce-stock.jpg";
 import sauceBulk from "@/assets/sauce-bulk.jpg";
@@ -40,12 +44,19 @@ export const Route = createFileRoute("/")({
 });
 
 const stages = [
-  { n: "01", t: "Grain Intake & Storage", d: "Reception pits, elevators and silo batteries sized to throughput.", img: siloComplex },
-  { n: "02", t: "Drying & Handling", d: "Continuous-flow and mobile dryers matched to crop moisture profiles.", img: dryer1 },
-  { n: "03", t: "Infrastructure Build", d: "Foundations, civil works and structural steel executed in-house.", img: foundation },
-  { n: "04", t: "Tomato Processing", d: "Sorting, washing and cooking under controlled hygiene conditions.", img: tomatoProcess },
-  { n: "05", t: "Bottling & Packing", d: "400g retail bottles and 5-litre bulk packs, batch-traceable.", img: sauceStock },
-  { n: "06", t: "Distribution", d: "Delivery to distributors, institutions and retail stockists.", img: distribution },
+  { n: "01", t: "Grain Intake & Storage", d: "Reception pits, elevators and silo batteries sized to throughput.", img: siloBatteryAsset.url, alt: "Galvanised grain silo battery installed by Bode Partners" },
+  { n: "02", t: "Drying & Handling", d: "Continuous-flow and mobile dryers matched to crop moisture profiles.", img: dryerTowerAsset.url, alt: "Continuous-flow grain dryer tower beside a storage silo" },
+  { n: "03", t: "Infrastructure Build", d: "Foundations, civil works and structural steel executed in-house.", img: steelShedAsset.url, alt: "Structural steel warehouse frame under construction" },
+  { n: "04", t: "Tomato Processing", d: "Sorting, washing and cooking under controlled hygiene conditions.", img: tomatoProcess, alt: "Tomatoes being sorted and processed" },
+  { n: "05", t: "Bottling & Packing", d: "400g retail bottles and 5-litre bulk packs, batch-traceable.", img: sauceStock, alt: "Bode Tomato Sauce bottles packed for dispatch" },
+  { n: "06", t: "Distribution", d: "Delivery to distributors, institutions and retail stockists.", img: distribution, alt: "Sauce cases loaded for distribution" },
+];
+
+const comingSoon = [
+  {
+    title: "Agricultural Drone Services",
+    body: "Planned aerial support for farms and estates — crop monitoring and spraying. Scope and availability are still being finalised.",
+  },
 ];
 
 const facts = [
@@ -72,8 +83,8 @@ function Index() {
         {/* HERO */}
         <section className="relative flex min-h-[92vh] items-end overflow-hidden pt-[68px]">
           <img
-            src={siloComplex}
-            alt="Grain silo battery at a Bode Partners agro-processing installation"
+            src={intakeElevatorsAsset.url}
+            alt="Grain intake elevators and silo battery at a Bode Partners installation"
             width={1600}
             height={1008}
             className="absolute inset-0 h-full w-full object-cover duotone"
@@ -160,8 +171,8 @@ function Index() {
                 {[
                   ["Incorporated", company.incorporated],
                   ["Legal form", company.legalForm],
-                  ["Headquarters", company.hq],
-                  ["Production facility", company.facility],
+                  ["Engineering services", company.hq],
+                  ["Sauce production & distribution", company.facility],
                   ["Equipment partners", company.partners],
                   ["Flagship product", company.flagship],
                   ["Phone", company.phones[0]],
@@ -199,7 +210,7 @@ function Index() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={s.img}
-                      alt={s.t}
+                      alt={s.alt}
                       loading="lazy"
                       width={900}
                       height={675}
@@ -241,6 +252,7 @@ function Index() {
                   "Continuous-flow and mobile drying systems",
                   "Conveying, elevation and intake handling",
                   "Civil works, foundations and structural steel",
+                  "Turnkey solutions with Imas Turkey, Ozstar Makina, Alvan Blanch, Cimbria, Enoch Dryers and Buhler",
                   "Commissioning, operator training and service",
                 ].map((li) => (
                   <li
@@ -252,11 +264,16 @@ function Index() {
                 ))}
               </ul>
               <div className="mt-9 grid grid-cols-2 gap-2">
-                {[silo1, dryer1, dryer2, siteTeam].map((img, i) => (
+                {[
+                  { src: siloBatteryAsset.url, alt: "Erected grain storage silos on concrete ring beams" },
+                  { src: dryerSiloAsset.url, alt: "Grain dryer and storage silo installation" },
+                  { src: dryerIntakeAsset.url, alt: "Intake hopper feeding a grain drying tower" },
+                  { src: controlPanelAsset.url, alt: "Electrical control panel wired for a grain handling plant" },
+                ].map((im, i) => (
                   <img
                     key={i}
-                    src={img}
-                    alt="Agro-processing installation work"
+                    src={im.src}
+                    alt={im.alt}
                     loading="lazy"
                     width={900}
                     height={900}
@@ -344,17 +361,61 @@ function Index() {
             </Reveal>
             <Reveal className="lg:sticky lg:top-24">
               <img
-                src={foundation}
-                alt="Reinforced concrete foundation works on a Bode Partners site"
+                src={civilSlabAsset.url}
+                alt="Reinforced concrete slab and steel-framed store built by Bode Partners"
                 loading="lazy"
                 width={900}
                 height={900}
                 className="w-full object-cover duotone"
               />
               <p className="mt-3 font-mono text-[11px] text-ink-soft">
-                Fig. 01 — Reinforced foundation works, silo battery base.
+                Fig. 01 — Reinforced concrete slab and steel-framed store, completed works.
+              </p>
+              <img
+                src={generatorAsset.url}
+                alt="Standby generator installed on a concrete plinth within a secured enclosure"
+                loading="lazy"
+                width={900}
+                height={900}
+                className="mt-6 w-full object-cover duotone"
+              />
+              <p className="mt-3 font-mono text-[11px] text-ink-soft">
+                Fig. 02 — Standby power installation, plant site.
               </p>
             </Reveal>
+          </div>
+        </section>
+
+        {/* COMING SOON */}
+        <section id="coming-soon" className="section-pad border-y border-steel-line bg-paper-deep">
+          <div className="shell">
+            <Reveal>
+              <Eyebrow>Coming soon</Eyebrow>
+              <h2 className="mt-6 max-w-2xl font-display text-[clamp(1.7rem,3.2vw,2.4rem)] text-ink">
+                Services we are preparing to offer.
+              </h2>
+              <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+                These are planned capabilities, not yet available to book.
+              </p>
+            </Reveal>
+            <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {comingSoon.map((c, i) => (
+                <Reveal
+                  as="li"
+                  key={c.title}
+                  className="border border-dashed border-steel-line bg-paper/60 p-6"
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <span className="inline-block border border-rust px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-rust">
+                    Coming soon
+                  </span>
+                  <h3 className="mt-5 font-display text-[15px] tracking-tight text-ink">
+                    {c.title}
+                  </h3>
+                  <p className="mt-2.5 text-[13px] leading-relaxed text-ink-soft">{c.body}</p>
+                </Reveal>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -427,14 +488,14 @@ function Index() {
               <div className="mt-9 space-y-5 font-mono text-[12px] text-paper/80">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.18em] text-paper/45">
-                    Headquarters
+                    Engineering &amp; Construction
                   </div>
                   <div className="mt-1.5">{company.hq}</div>
                   <div>{company.poBox}</div>
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.18em] text-paper/45">
-                    Production facility
+                    Bode Tomato Sauce — Production &amp; Distribution
                   </div>
                   <div className="mt-1.5">{company.facility}</div>
                 </div>

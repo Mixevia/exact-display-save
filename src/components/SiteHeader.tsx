@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { company } from "@/lib/company";
+
 const nav = [
   { href: "#about", label: "About" },
   { href: "#agro", label: "Agro-Processing" },
@@ -41,7 +43,9 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href={company.whatsapp}
+            target="_blank"
+            rel="noopener"
             className="hidden bg-ink px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em] text-paper transition-colors hover:bg-rust sm:inline-block"
           >
             Request a quote
@@ -77,7 +81,9 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={company.whatsapp}
+              target="_blank"
+              rel="noopener"
               onClick={() => setOpen(false)}
               className="mt-4 bg-ink px-4 py-3 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-paper"
             >

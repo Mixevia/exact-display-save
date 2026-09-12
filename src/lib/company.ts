@@ -4,12 +4,13 @@ export const company = {
   tin: "1054506880",
   incorporated: "04 Aug 2025, Kampala",
   legalForm: "Private Ltd by Shares",
-  hq: "Kyaliwajala Road, Kampala",
+  hq: "Kyaliwajala, Namugongo, Kampala",
   facility: "Rwentondo Lane 1, Mbarara City South Division",
   poBox: "P.O. Box 422717, Kampala",
   phones: ["+256 706 22 62 24", "+256 701 66 38 24"],
   email: "bodepartnersug@gmail.com",
-  partners: "RIELA, Perry Engineering",
+  partners: "Imas Turkey, Ozstar Makina, Alvan Blanch, Cimbria, Enoch Dryers, Buhler",
+  whatsapp: "https://wa.me/256706226224",
   flagship: "Bode Tomato Sauce, 400g",
 } as const;
 

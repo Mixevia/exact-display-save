@@ -361,17 +361,61 @@ function Index() {
             </Reveal>
             <Reveal className="lg:sticky lg:top-24">
               <img
-                src={foundation}
-                alt="Reinforced concrete foundation works on a Bode Partners site"
+                src={civilSlabAsset.url}
+                alt="Reinforced concrete slab and steel-framed store built by Bode Partners"
                 loading="lazy"
                 width={900}
                 height={900}
                 className="w-full object-cover duotone"
               />
               <p className="mt-3 font-mono text-[11px] text-ink-soft">
-                Fig. 01 — Reinforced foundation works, silo battery base.
+                Fig. 01 — Reinforced concrete slab and steel-framed store, completed works.
+              </p>
+              <img
+                src={generatorAsset.url}
+                alt="Standby generator installed on a concrete plinth within a secured enclosure"
+                loading="lazy"
+                width={900}
+                height={900}
+                className="mt-6 w-full object-cover duotone"
+              />
+              <p className="mt-3 font-mono text-[11px] text-ink-soft">
+                Fig. 02 — Standby power installation, plant site.
               </p>
             </Reveal>
+          </div>
+        </section>
+
+        {/* COMING SOON */}
+        <section id="coming-soon" className="section-pad border-y border-steel-line bg-paper-deep">
+          <div className="shell">
+            <Reveal>
+              <Eyebrow>Coming soon</Eyebrow>
+              <h2 className="mt-6 max-w-2xl font-display text-[clamp(1.7rem,3.2vw,2.4rem)] text-ink">
+                Services we are preparing to offer.
+              </h2>
+              <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+                These are planned capabilities, not yet available to book.
+              </p>
+            </Reveal>
+            <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {comingSoon.map((c, i) => (
+                <Reveal
+                  as="li"
+                  key={c.title}
+                  className="border border-dashed border-steel-line bg-paper/60 p-6"
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <span className="inline-block border border-rust px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-rust">
+                    Coming soon
+                  </span>
+                  <h3 className="mt-5 font-display text-[15px] tracking-tight text-ink">
+                    {c.title}
+                  </h3>
+                  <p className="mt-2.5 text-[13px] leading-relaxed text-ink-soft">{c.body}</p>
+                </Reveal>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -444,14 +488,14 @@ function Index() {
               <div className="mt-9 space-y-5 font-mono text-[12px] text-paper/80">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.18em] text-paper/45">
-                    Headquarters
+                    Engineering &amp; Construction
                   </div>
                   <div className="mt-1.5">{company.hq}</div>
                   <div>{company.poBox}</div>
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.18em] text-paper/45">
-                    Production facility
+                    Bode Tomato Sauce — Production &amp; Distribution
                   </div>
                   <div className="mt-1.5">{company.facility}</div>
                 </div>

@@ -44,12 +44,19 @@ export const Route = createFileRoute("/")({
 });
 
 const stages = [
-  { n: "01", t: "Grain Intake & Storage", d: "Reception pits, elevators and silo batteries sized to throughput.", img: siloComplex },
-  { n: "02", t: "Drying & Handling", d: "Continuous-flow and mobile dryers matched to crop moisture profiles.", img: dryer1 },
-  { n: "03", t: "Infrastructure Build", d: "Foundations, civil works and structural steel executed in-house.", img: foundation },
-  { n: "04", t: "Tomato Processing", d: "Sorting, washing and cooking under controlled hygiene conditions.", img: tomatoProcess },
-  { n: "05", t: "Bottling & Packing", d: "400g retail bottles and 5-litre bulk packs, batch-traceable.", img: sauceStock },
-  { n: "06", t: "Distribution", d: "Delivery to distributors, institutions and retail stockists.", img: distribution },
+  { n: "01", t: "Grain Intake & Storage", d: "Reception pits, elevators and silo batteries sized to throughput.", img: siloBatteryAsset.url, alt: "Galvanised grain silo battery installed by Bode Partners" },
+  { n: "02", t: "Drying & Handling", d: "Continuous-flow and mobile dryers matched to crop moisture profiles.", img: dryerTowerAsset.url, alt: "Continuous-flow grain dryer tower beside a storage silo" },
+  { n: "03", t: "Infrastructure Build", d: "Foundations, civil works and structural steel executed in-house.", img: steelShedAsset.url, alt: "Structural steel warehouse frame under construction" },
+  { n: "04", t: "Tomato Processing", d: "Sorting, washing and cooking under controlled hygiene conditions.", img: tomatoProcess, alt: "Tomatoes being sorted and processed" },
+  { n: "05", t: "Bottling & Packing", d: "400g retail bottles and 5-litre bulk packs, batch-traceable.", img: sauceStock, alt: "Bode Tomato Sauce bottles packed for dispatch" },
+  { n: "06", t: "Distribution", d: "Delivery to distributors, institutions and retail stockists.", img: distribution, alt: "Sauce cases loaded for distribution" },
+];
+
+const comingSoon = [
+  {
+    title: "Agricultural Drone Services",
+    body: "Planned aerial support for farms and estates — crop monitoring and spraying. Scope and availability are still being finalised.",
+  },
 ];
 
 const facts = [
